@@ -1,0 +1,33 @@
+div.balloon {
+  height:60px;
+  width:50px;
+  border-radius:40%;
+  border:red 3px solid;
+  background-color: red;
+  position:absolute;
+  top: 340px;
+}
+
+#Score {
+  font-size: 30px;
+  display: inline;
+}
+
+#Game_screen {
+  border: black 4px double;
+  height:400px;
+  width:900px;
+  position:relative;
+  top:30px;
+}
+
+#time {
+  position:fixed;
+  display: inline;
+  left: 300px;
+}
+
+.control {
+  position: relative;
+  top: 50px;
+}

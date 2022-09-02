@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title> Sammy's Fiesta </title>
+  <link rel="stylesheet" href="balloon.css" type="text/css">
+  <head>
+<body>
+  <a href="/Users/sgrawal/Desktop/Coding/Games/GamesPage.html">Home</a>
+  <p id="Score"> Score: 0 </p>
+  <p id="time"> Time:1:00 </p>
+  <p id="test">  </p>
+  <div id= "Game_screen" > </div>
+  <button class= "control" onclick="Balloon();setInterval(timer,1000)"> Start </button>
+  <button class= "control" onclick="Endgame()"> Over </button>
+</body>
+
+<script>
+var score = 0;
+var Time = 60;
+
+function Balloon() {
+  var rate= parseInt(Math.floor((Math.random()*100)+800))
+  setInterval(function(){
+    var wide=String(Math.floor(Math.random() * 841)).concat("px");
+    var balloons= $(".balloon");
+    var item = document.createElement("div");
+    item.className += " balloon";
+    document.getElementById("Game_screen").appendChild(item);
+    balloons.css({"left":wide});
+    balloons.animate({top:'10px', visibility:'hidden'},600);
+    balloons.click(function(){
+      score += 10;
+      document.getElementById("Score").innerHTML = "Score:" + score;
+      balloons.css({"display": "none"});
+    })
+  },800)
+}
+function Endgame(){
+  document.write("Your score was ")
+  document.write(score)
+}
+
+function timer() {
+  Time -= 1;
+  document.getElementById('time').innerHTML= "Time Remaining: " + Time;
+  if (Time == 0) {
+    Endgame()
+  }
+
+
+}
+</script>
+
+</html>
